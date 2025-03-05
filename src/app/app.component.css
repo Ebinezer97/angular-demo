@@ -1,0 +1,25 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .shadow{
+    height: 40px;
+    background-color:white;
+    box-shadow:2px;
+  }
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #8f8f93; /* Adjust color */
+    color: rgb(11, 9, 9);
+    text-align: center;
+    padding: 10px;
+  }
+
+
+
+
+
+ 
+  

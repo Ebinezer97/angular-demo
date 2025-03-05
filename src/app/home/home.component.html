@@ -1,0 +1,227 @@
+
+
+<div class="container-fluid ">
+   
+    <div class="row">
+    <div class="col-md-8 mt-2">
+        <span style="font-size: 18px;padding-left: 60px;" >Property Details</span>
+        <div class="container boxcontainer" (scroll)="onScroll($event)" >
+
+            
+            <div class="top-indicator" [ngClass]="{ 'active': isAtTop }"></div>
+            <div class="boxpadding">
+            <div class="row mt-2">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" >
+                        <mat-label>EMIRATE</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let item of emirate" [value]="item.name">
+                                {{ item.name }}
+                              </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" >
+                        <mat-label>PROPERTY LOCATION</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let item of emirate" [value]="item.name">
+                                {{ item.name }}
+                              </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="w-100" >
+                        <mat-label>PROPERTY TYPE</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let item of property" [value]="item.name">
+                                {{ item.name }}
+                              </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="w-100">
+                        <mat-label>PROPERTY BUILDUP AREA</mat-label>
+                        <input matInput placeholder="" value="">
+                      </mat-form-field>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field class="w-100 " >
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" (dateChange)="datecheck()"  [(ngModel)]="dates"
+                    >
+                    
+                    <mat-datepicker-toggle  matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="w-100" >
+                    <mat-label>COVER REQUIRED</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let item of Covers" [value]="item.name">
+                            {{ item.name }}
+                          </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field class="w-100">
+                    <mat-label>PROPERTY VALUE</mat-label>
+                    <input matInput placeholder="" value="">
+                  </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="w-100">
+                    <mat-label>CONTENTS VALUE</mat-label>
+                    <input matInput placeholder="" value="">
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field class="w-100">
+                    <mat-label>ANY CONTENT MORE THEN AED 10,000</mat-label>
+                    <mat-select>
+                      <mat-option value="YES">YES</mat-option>
+                      <mat-option value="No">NO</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="w-100">
+                    <mat-label>NO.OF DOMESTIC HELPERS</mat-label>
+                    <mat-select>
+                      <mat-option value="1">1</mat-option>
+                      <mat-option value="2">2</mat-option>
+                      <mat-option value="3">3</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+        </div>
+        <span style="font-size: 18px;" >Domestic Helper Details</span>
+        <div class="row">
+            <table class="table">
+                <thead class="table-secondary">
+                <tr>
+                <th>Name</th>
+                <th>Date of birth</th>
+                <th>Nationality</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let obj of helperdetails; let sNo=index" >
+                <td>
+                    <div *ngIf="obj.onEdit">
+                        <input type="text" class="form-control" [(ngModel)]="obj.name">
+                    </div>
+                    <div *ngIf="!obj.onEdit">
+                        
+                        {{obj.name}}
+                    </div>
+                    </td>
+                <td>
+                    <div *ngIf="obj.onEdit">
+
+                       
+                          <input type="date" [(ngModel)]="obj.dob" class="form-control">
+
+                    </div>
+                    <div *ngIf="!obj.onEdit">
+
+                        {{obj.dob |date:'dd/MM/YYYY' }}
+                    </div>
+                    </td>
+                <td>
+                   
+                        <div *ngIf="obj.onEdit">
+                            
+                              <select [(ngModel)]="obj.nationality" class="form-control">
+                                <option *ngFor="let option of country" [value]="option.value">
+                                  {{ option.name }}
+                                </option>
+                              </select>
+                        </div>
+
+                        <div *ngIf="!obj.onEdit">
+                            {{obj.nationality}}
+                        </div>
+                    </td>
+                <td>
+                    <div *ngIf="!obj.onEdit">
+                        <mat-icon style="color: rgb(64, 111, 72);" (click)="edit(obj)">edit</mat-icon>
+                   <Span  style="font-size: 27px;">|</Span> <mat-icon style="color: rgb(169, 37, 37);" (click)="ondelete(sNo)">delete</mat-icon>
+                    
+                </div>
+                    <div *ngIf="obj.onEdit">
+                        <mat-icon style="color:green" (click)="update(obj)">done</mat-icon><Span style="font-size: 27px;">|</Span>
+                        <mat-icon  style="color: red;" (click)="oncancel(obj)"> close</mat-icon>
+                    </div>
+                </td>
+
+            </tr>
+            <tr>
+                <td><input [(ngModel)]="newRow.name" type="text" class="form-control" ></td>
+                <td><input [(ngModel)]="newRow.dob" type="date" class="form-control" ></td>
+                <td> <select [(ngModel)]="newRow.nationality" class="form-control">
+                    <option *ngFor="let option of country" [value]="option.value">
+                      {{ option.name }}
+                    </option>
+                  </select></td>
+                <td><mat-icon (click)="rowDdd()" style="color:green">done</mat-icon> <Span style="font-size: 27px;">|</Span> 
+                    <mat-icon (click)="onReset()" style="color: rgb(25, 0, 255);">history</mat-icon>
+                </td>
+              </tr>
+        </tbody>
+            </table>
+        </div>
+    </div>
+        <div class="bottom-indicator" [ngClass]="{ 'active': isAtBottom }"></div>
+
+    </div>
+    <div class="container mt-2 Quote">
+        <div class="row">
+            <div class="col-md-12 ">
+                <div >
+                    <button class="w-100" mat-flat-button color="warn">Get Your Quote </button>
+                </div>    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                  
+            </div>
+            <div class="col-md-3 mt-3">
+                Already have a Quote with us 
+            </div>
+            <div class="col-md-4 mt-2 example-spacer">
+                
+                <button mat-raised-button color="primary"  class="w-100" >
+                    <mat-icon>search</mat-icon>
+                    Retrieve it
+                  </button>
+            </div> 
+        </div>
+
+       
+    </div>
+    
+    </div>
+    <div class="col-md-4">
+       <app-menu></app-menu>
+
+    </div>
+    </div>
+</div>
+
+
+

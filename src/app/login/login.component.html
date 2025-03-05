@@ -1,0 +1,128 @@
+<body>
+<div class="dynamic-bg" [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}">
+
+    <div class="col-md-3 boxs  mt-5"> 
+    <div class="card-header">
+
+        <div class="company-name">
+            <img src="assets/logo1.png" alt="My Image" width="80" height="70">
+            <span class="text-center">Devquad software</span>
+        </div>
+        <div class="view">
+            <span [ngClass]="login?'textdecoration':'none'" (click)="login=true">Login</span>
+            <span [ngClass]="!login?'textdecoration':'none'" (click)="login=false">Sign up</span>
+        </div>
+
+        </div> 
+            <div *ngIf="login" class="card-body">
+                <div class="mt-2">
+                
+                        <mat-form-field appearance="fill" class="w-100">
+                          <mat-label>User Name</mat-label>
+                          <mat-icon matPrefix>face</mat-icon>
+                          <input matInput placeholder="">
+                        </mat-form-field>
+                     
+                </div>
+                <div class="mt-2">
+                  
+                        <mat-form-field appearance="fill" class="w-100">
+                          <mat-label>Password</mat-label>
+                          <mat-icon matPrefix>lock</mat-icon>
+                          <input matInput placeholder="">
+                        </mat-form-field>
+                    
+                    </div>
+                    <div class="mt-1 btn">
+                        <button mat-raised-button   class="w-50 loginbtn" (click)="logincheck()">
+                            LOGIN
+                           </button>
+                        </div>
+                    <div >
+                        <hr style="color: black;">
+                    </div>
+                    <div>
+                        <span class="Forgetpwdtext">Forget Password</span>
+                        <mat-form-field appearance="fill" class="w-100 mt-2">
+                            <mat-label>User Name</mat-label>
+                            <mat-icon matPrefix>mail</mat-icon>
+                            <input matInput placeholder="">
+                          </mat-form-field>
+                    </div>
+                    <div class="mt-1 btn">
+                        <button mat-raised-button   class="w-50 loginbtn" >
+                            RESET
+                           </button>
+                        </div>
+            </div> 
+            <div *ngIf="!login" class="card-body" >
+                <div >
+                
+                        <mat-form-field appearance="fill" class="w-100 " >
+                          <mat-label>First Name</mat-label>
+                          <mat-icon matPrefix>face</mat-icon>
+                          <input matInput placeholder="">
+                        </mat-form-field>
+                     
+                </div>
+                <div >
+                        <mat-form-field appearance="fill" class="w-100">
+                          <mat-label>Last Name</mat-label>
+                          <mat-icon matPrefix>lock</mat-icon>
+                          <input matInput placeholder="">
+                        </mat-form-field>
+                    </div>
+                    <div >
+                        <mat-form-field appearance="fill" class="w-100">
+                          <mat-label>Mobile</mat-label>
+                          <mat-icon matPrefix>lock</mat-icon>
+                          <input matInput placeholder="">
+                        </mat-form-field>
+                    </div>
+                    <div >
+                        <mat-form-field appearance="fill" class="w-100">
+                          <mat-label>Email</mat-label>
+                          <mat-icon matPrefix>lock</mat-icon>
+                          <input matInput placeholder="">
+                        </mat-form-field>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8"><mat-radio-group aria-label="Select an option">
+                            <mat-radio-button value="1">Option 1</mat-radio-button>
+                            <mat-radio-button value="2">Option 2</mat-radio-button>
+                          </mat-radio-group></div>
+                         <div class="col-md-4">
+                         <button mat-raised-button   class="optbtn">
+                            <span >SENT OTP</span>
+                           </button> </div> 
+                        </div>
+            
+                    <div>
+                        <mat-form-field appearance="fill" class="w-100 mt-2">
+                            <mat-label>OTP</mat-label>
+                            <mat-icon matPrefix>telegram</mat-icon>
+                            <input matInput placeholder="">
+                          </mat-form-field>
+                    </div>
+                    <div class="row">
+                    <div class="socialiocn col-md-7">
+                        <i class="fa-brands fa-facebook facebook"></i>
+                        <i class="fa-brands fa-twitter twitter"></i>
+                        <i class="fa-brands fa-google gmail"></i>
+                        
+                        </div>
+                        <div class="col-md-5">
+                            <button mat-raised-button  class="signup" >
+                              <span (click)="logincheck()">SIGNUP</span> 
+                              </button> </div> 
+
+                    </div>
+            </div> 
+            <!-- <div class="card-footer"><button mat-raised-button color="primary"  class="w-100 btn" >
+               Submit
+              </button></div> -->
+    </div>
+
+
+</div>
+</body>

@@ -1,0 +1,99 @@
+.dynamic-bg{
+    
+
+   height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.boxs{
+    float: right;
+    margin-right: 20%;
+   
+}
+.card-header{
+    background-color: aliceblue;
+    padding-bottom: 15px;
+}
+.company-name{
+    padding-left: 15%;
+}
+
+.view>span{
+    cursor: pointer;
+    margin-right: 20px;
+}
+.textdecoration{
+    
+    text-decoration: underline;
+    text-underline-offset: 17px; /* Adjust the space */
+    text-decoration-thickness: 5px;
+    text-decoration-color: rgb(75, 75, 174);
+    width: 1000px; /* Adjust width automatically */
+}
+.card-body{
+    padding: 20px 20px;
+    background-color: rgb(36, 158, 91);
+    opacity: 0.9;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: transparent !important;
+  }
+  .btn{
+    display: flex;
+    justify-content: center;
+    border: none;
+   
+  }
+  .loginbtn{
+    border: none;
+    background-color: rgb(4, 29, 113) !important;
+    color: aliceblue !important;
+  }
+  .Forgetpwdtext{
+    color: rgb(248, 251, 253);
+   
+  }
+  
+  .facebook {
+    color: #1877F2; /* Facebook Blue */
+    font-size: 30px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 5px 5px;
+  }
+  
+  .twitter {
+    color: #fafafa; /* Twitter Blue */
+    font-size: 30px;
+    background-color: #1DA1F2;
+    border-radius: 20px;
+    padding: 5px 5px;
+  }
+  
+  .gmail {
+    background-color: #D44638; /* Gmail Red */
+    font-size: 30px;
+    color: #fafafa;
+    padding: 5px 5px;
+    border-radius: 20px;
+  }
+  .socialiocn> i{
+    margin-left: 20px;
+  }
+  .optbtn span{
+    font-size: 11px;
+    color: #fafafa;
+  }
+  .optbtn{
+   
+    background-color: rgb(11, 35, 115) !important;
+  }
+  .signup{
+  
+    background-color: rgb(4, 29, 113) !important;
+   
+  }
+  .signup span{
+    color: #fafafa;
+  }

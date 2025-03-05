@@ -1,0 +1,57 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .shadow{
+    height: 50px;
+    background-color:white;
+    box-shadow:2px;
+  }
+   mat-icon{
+    cursor: pointer;
+   }
+   .boxcontainer{
+     /* Set a fixed width (optional) */
+  height: 450px; /* Fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden
+   }
+   .boxpadding{
+    padding-left: 40px;
+    padding-right: 20px;
+   }
+   
+
+  
+/* Width of the scrollbar */
+.boxcontainer::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track (background of scrollbar) */
+.boxcontainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Scrollbar Handle */
+.boxcontainer::-webkit-scrollbar-thumb {
+  background: green;
+  border-radius: 10px;
+}
+
+/* Scrollbar Handle on Hover */
+.boxcontainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.Quote{
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+
+
+
